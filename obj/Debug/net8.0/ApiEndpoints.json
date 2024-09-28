@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "teste_jose_api.Controllers.LoginController",
+    "Method": "Logar",
+    "RelativePath": "Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "teste_jose_api.Model.LoginModel\u002BUsuarioFilter",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
