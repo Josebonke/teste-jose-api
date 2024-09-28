@@ -12,7 +12,7 @@ namespace teste_jose_api.Controllers
         {
             try
             {
-                return Ok();
+                return Ok("Hello World");
             }
             catch (Exception ex)
             {

@@ -1,0 +1,57 @@
+Criando um .gitignore Ideal para sua Web API .NET Core 8
+Um arquivo .gitignore bem configurado é essencial para manter seu repositório Git organizado e eficiente, ignorando arquivos e pastas que não precisam ser versionados. Para uma Web API .NET Core 8, aqui está uma sugestão de configuração, combinando as melhores práticas e adaptando-se às particularidades do .NET Core 8:
+
+# See https://github.com/github/gitignore/blob/main/VisualStudio.gitignore for a more
+# comprehensive list of patterns.
+
+### Build artifacts
+*.vs/
+*.suo
+*.user
+*.tmp
+*.log
+*.obj
+**/*.pdb
+bin/
+obj/
+packages/
+
+### Output
+*.exe
+*.dll
+*.nupkg
+
+### Local settings
+*.vscode/
+.vscode/
+appsettings.Development.json
+appsettings.json
+.env
+.gitattributes
+
+### IDE-specific files
+# Visual Studio
+*.suo
+*.user
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/*
+
+### Other
+# User-specific files
+*.suo
+*.user
+.vshost.exe
+
+# Log files
+*.log
+
+# Local configuration file (such as for Docker)
+docker-compose*.yml
+
+# Test Results
+**/TestResults
+
+# Local identity tokens
+*.token
