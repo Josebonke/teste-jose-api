@@ -18,7 +18,7 @@
             public string Email { get; set; } = "";
             public string Senha { get; set; } = "";
             public bool IsBloqueado { get; set; } = false;
-            public int TentativasDeAcess0 { get; set; } = 0;
+            public int TentativasDeAcesso { get; set; } = 0;
         }
 
         public class JwtToken

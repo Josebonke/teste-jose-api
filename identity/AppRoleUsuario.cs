@@ -1,6 +1,8 @@
-﻿namespace teste_jose_api.identity
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace teste_jose_api.identity
 {
-    public class AppRoleUsuario
+    public class AppRoleUsuario : IdentityRole
     {
     }
 }

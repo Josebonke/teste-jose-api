@@ -1,14 +1,14 @@
 [
   {
     "ContainingType": "teste_jose_api.Controllers.LoginController",
-    "Method": "Logar",
-    "RelativePath": "Login",
+    "Method": "Login",
+    "RelativePath": "Login/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "usuario",
+        "Name": "model",
         "Type": "teste_jose_api.Model.LoginModel\u002BUsuarioFilter",
         "IsRequired": true
       }

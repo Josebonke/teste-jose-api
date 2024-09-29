@@ -1,28 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using teste_jose_api.identity;
 
 
 namespace teste_jose_api
 {
-    public class ApplicationDbContext: DbContext
+    public class ApplicationDbContext: IdentityDbContext<AppUsuario>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options){}
-         DbSet<Model.LoginModel.UsuarioGrid> Usuarios { get; set; }
+         
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
+        public DbSet<Model.LoginModel.UsuarioGrid> Usuarios { get; set; }
 
-            // Personalização de tabelas e propriedades, se necessário
-            builder.Entity<AppUsuario>(entity => {
-                entity.ToTable("Usuario");
-            });
-
-            builder.Entity<ApplicationRole>(entity => {
-                entity.ToTable("Roles");
-            });
-
-            // Defina outras personalizações, como tabelas de claims
-        }
     }
 }
