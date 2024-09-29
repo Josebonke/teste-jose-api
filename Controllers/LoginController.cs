@@ -26,11 +26,11 @@ namespace teste_jose_api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] UsuarioFilter model)
+        public async Task<IActionResult> Login([FromBody] UsuarioFilter filter)
         {
-            var user = await _userManager.FindByEmailAsync(model.Email);
+            var user = await _userManager.FindByEmailAsync(filter.Email);
 
-            if (user == null || !await _userManager.CheckPasswordAsync(user, model.Senha))
+            if (user == null || !await _userManager.CheckPasswordAsync(user, filter.Senha))
             {
                 if (user != null)
                 {
