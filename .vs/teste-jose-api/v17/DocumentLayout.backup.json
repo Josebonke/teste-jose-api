@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\sistemas\\teste-jose\\teste-jose-api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\model\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:model\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\identity\\appusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:identity\\appusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppUsuario.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\identity\\AppUsuario.cs",
+              "RelativeDocumentMoniker": "identity\\AppUsuario.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\identity\\AppUsuario.cs",
+              "RelativeToolTip": "identity\\AppUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T17:27:23.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Model\\LoginModel.cs",
+              "RelativeDocumentMoniker": "Model\\LoginModel.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Model\\LoginModel.cs",
+              "RelativeToolTip": "Model\\LoginModel.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T16:19:37.364Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -31,6 +73,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ApplicationDbContext.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ApplicationDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAxwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T17:06:45.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T16:46:02.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Controllers\\LoginController.cs",

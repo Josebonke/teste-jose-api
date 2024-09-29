@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using teste_jose_api;
+using teste_jose_api.identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,7 +35,30 @@ app.MapControllers();
 builder = WebApplication.CreateBuilder(args);
 
 // Adicione os serviços do DbContext
-builder.Services.AddDbContext<>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Configuração do Identity
+builder.Services.AddIdentity<AppUsuario, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Configurações da senha
+    options.Password.RequireDigit = true;
+    options.Password.RequiredLength = 8;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireLowercase = true;
+
+    // Configurações do bloqueio
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+    options.Lockout.AllowedForNewUsers = true;
+
+    // Configurações do usuário
+    options.User.RequireUniqueEmail = true;
+});
 
 app.Run();

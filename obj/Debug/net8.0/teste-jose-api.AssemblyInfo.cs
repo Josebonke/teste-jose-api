@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("teste-jose-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+507bf80277edba6394aa24565b1f299841bf04b3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4678c3f4d5a6e560d0ba5b54b7bf8865612332bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("teste-jose-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("teste-jose-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
