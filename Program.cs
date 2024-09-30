@@ -4,40 +4,45 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using teste_jose_api;
+using teste_jose_api.Dao;
 using teste_jose_api.identity;
+using teste_jose_api.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
 
-// Adicione os serviços do DbContext
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configuração do Identity
+
 builder.Services.AddIdentity<AppUsuario, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<IUsuarioDAO, LoginDao>();
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    // Configurações da senha
+    
     options.Password.RequireDigit = true;
     options.Password.RequiredLength = 8;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = true;
     options.Password.RequireLowercase = true;
 
-    // Configurações do bloqueio
+    
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
     options.Lockout.AllowedForNewUsers = true;
 
-    // Configurações do usuário
+    
     options.User.RequireUniqueEmail = true;
 });
 
-// Configuração do JWT
-var key = builder.Configuration["Jwt:Key"] ?? throw new ArgumentNullException("A chave JWT não pode ser nula.");
+// Configurando jwt
+var jwtConfig = builder.Configuration.GetSection("Jwt");
+var key = jwtConfig["Key"] ?? throw new ArgumentNullException("A chave JWT não pode ser nula.");
 var keyBytes = Encoding.ASCII.GetBytes(key);
 
 builder.Services.AddAuthentication(options =>
@@ -91,5 +96,13 @@ app.UseAuthentication(); // Adicione isto antes de Authorization
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUsuario>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var seeder = new SeedUsers(userManager, roleManager);
+    await seeder.InsertUserAsync();  // Note o uso de async/await
+}
 
 app.Run();
