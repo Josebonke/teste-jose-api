@@ -14,7 +14,9 @@
 - Foi criado uma classe nomeada SeedUsuario para criar usuário assim que a api é "buildada" as entidades nomes,UserName,Email e senha estão em hardcode 
 para Cadastra um novo usuário primeiro na ln 20  é verificado se o email já existe na base de dados 
 "_userManager.FindByEmailAsync("insiraAqui um email para verificar a existen de um usuário")
-
 entra a ln 24 e 30 é onde se coloca nome,email,userName
+
+## Email : Jose@teste.com
+## Senha :Jose@123
 
 
