@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\sistemas\\teste-jose\\teste-jose-api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\service\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:service\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\dao\\logindao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:dao\\logindao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\identity\\appusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:identity\\appusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\sistemas\\teste-jose\\teste-jose-api\\Migrations\\20240929214108_RenomearPropriedadeTentativasDeAcesso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20240929214108_RenomearPropriedadeTentativasDeAcesso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AE2067F-5BEB-4E44-A036-18220378E20B}|teste-jose-api.csproj|c:\\sistemas\\teste-jose\\teste-jose-api\\model\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,24 +67,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20240929214108_RenomearPropriedadeTentativasDeAcesso.cs",
-              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Migrations\\20240929214108_RenomearPropriedadeTentativasDeAcesso.cs",
-              "RelativeDocumentMoniker": "Migrations\\20240929214108_RenomearPropriedadeTentativasDeAcesso.cs",
-              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Migrations\\20240929214108_RenomearPropriedadeTentativasDeAcesso.cs",
-              "RelativeToolTip": "Migrations\\20240929214108_RenomearPropriedadeTentativasDeAcesso.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwAwAAAAqAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwBgAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-29T21:41:09.045Z",
+              "WhenOpened": "2024-09-30T00:56:34.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginDAO.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Dao\\LoginDAO.cs",
+              "RelativeDocumentMoniker": "Dao\\LoginDAO.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Dao\\LoginDAO.cs",
+              "RelativeToolTip": "Dao\\LoginDAO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswA4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T00:41:10.64Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LoginService.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Service\\LoginService.cs",
+              "RelativeDocumentMoniker": "Service\\LoginService.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Service\\LoginService.cs*",
+              "RelativeToolTip": "Service\\LoginService.cs*",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T00:39:31.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LoginController.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Controllers\\LoginController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwCMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-29T22:08:32.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AppUsuario.cs",
-              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\identity\\AppUsuario.cs",
-              "RelativeDocumentMoniker": "identity\\AppUsuario.cs",
-              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\identity\\AppUsuario.cs",
-              "RelativeToolTip": "identity\\AppUsuario.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Identity\\AppUsuario.cs",
+              "RelativeDocumentMoniker": "Identity\\AppUsuario.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Identity\\AppUsuario.cs",
+              "RelativeToolTip": "Identity\\AppUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-29T21:38:17.163Z",
@@ -80,12 +131,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "AppRoleUsuario.cs",
-              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\identity\\AppRoleUsuario.cs",
-              "RelativeDocumentMoniker": "identity\\AppRoleUsuario.cs",
-              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\identity\\AppRoleUsuario.cs",
-              "RelativeToolTip": "identity\\AppRoleUsuario.cs",
+              "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Identity\\AppRoleUsuario.cs",
+              "RelativeDocumentMoniker": "Identity\\AppRoleUsuario.cs",
+              "ToolTip": "C:\\sistemas\\teste-jose\\teste-jose-api\\Identity\\AppRoleUsuario.cs",
+              "RelativeToolTip": "Identity\\AppRoleUsuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-29T21:38:15.538Z",
@@ -93,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "LoginModel.cs",
               "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Model\\LoginModel.cs",
               "RelativeDocumentMoniker": "Model\\LoginModel.cs",
@@ -106,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -119,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "20240929212933_InitialCreate.cs",
               "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\Migrations\\20240929212933_InitialCreate.cs",
               "RelativeDocumentMoniker": "Migrations\\20240929212933_InitialCreate.cs",
@@ -132,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\sistemas\\teste-jose\\teste-jose-api\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
