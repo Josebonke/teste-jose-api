@@ -25,42 +25,69 @@ namespace teste_jose_api.Service
         public async Task<string> LoginAsync(UsuarioFilter filter)
         {
 
-            var user = await _userRepository.GetUserByEmailAsync(filter.Email);
+            var userFindByEmail = await _userRepository.GetUserByEmailAsync(filter.Email);
+            var userFindedByPassword = await _userRepository.CheckPasswordAsync(userFindByEmail, filter.Senha);
 
-            if (user == null || !await _userRepository.CheckPasswordAsync(user, filter.Senha))
+            if (userFindByEmail.LockoutEnabled)
             {
-                if (user != null)
-                {
-                    user.TentativasDeLoginErradas++;
-                    if (user.TentativasDeLoginErradas >= 5)
-                    {
-                        user.Bloqueado = true;
-                        await _userRepository.SetLockoutEndDateAsync(user, DateTimeOffset.UtcNow.AddMinutes(15));
-                    }
-
-                    await _userRepository.UpdateUserAsync(user);
-                }
-                throw new UnauthorizedAccessException("Login ou senha inválidos.");
+                await _userRepository.SetLockoutEndDateAsync(userFindByEmail, DateTimeOffset.UtcNow.AddMinutes(15));
+                throw new UnauthorizedAccessException("Usuario Bloquado");
             }
 
-            user.TentativasDeLoginErradas = 0;
-            await _userRepository.UpdateUserAsync(user);
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-            var tokenDescriptor = new SecurityTokenDescriptor
+            if (userFindByEmail.LockoutEnd <= DateTime.Now)
             {
-                Subject = new ClaimsIdentity(new Claim[]
+                userFindByEmail.Bloqueado = false;
+                userFindByEmail.LockoutEnabled = true;
+                userFindByEmail.TentativasDeLoginErradas = 0;
+                await _userRepository.UpdateUserAsync(userFindByEmail);
+            }
+            {
+                await _userRepository.SetLockoutEndDateAsync(userFindByEmail, DateTimeOffset.UtcNow.AddMinutes(15));
+                throw new UnauthorizedAccessException("Usuario Bloquado");
+            }
+            if (userFindByEmail != null && userFindedByPassword)
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
+                var tokenDescriptor = new SecurityTokenDescriptor
                 {
-            new Claim(ClaimTypes.NameIdentifier, user.Id),
-            new Claim(ClaimTypes.Email, user.Email)
-                }),
-                Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                        new Claim(ClaimTypes.NameIdentifier, userFindByEmail.Id),
+                        new Claim(ClaimTypes.Email, userFindByEmail.Email)
+                                }),
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+                return tokenHandler.WriteToken(token);
+
+            }
+            else if(userFindByEmail != null && !userFindedByPassword)
+            {
+                userFindByEmail.TentativasDeLoginErradas += 1;
+                await _userRepository.UpdateUserAsync(userFindByEmail);
+                if (userFindByEmail.TentativasDeLoginErradas >= 5)
+                {
+                    userFindByEmail.Bloqueado = true;
+                    await _userRepository.SetLockoutEndDateAsync(userFindByEmail, DateTimeOffset.UtcNow.AddMinutes(15));
+                    throw new UnauthorizedAccessException("Usuario Bloquado");
+                }
+                else
+                {
+                    throw new UnauthorizedAccessException("Login ou senha inválidos.");
+                }
+            }
+            else
+            {
+                throw new UnauthorizedAccessException("Login ou senha inválidos.");
+
+            }
+            
+           
+
+            
         }
     }
 }
