@@ -10,8 +10,8 @@
   - Nome do Banco UserManager
 
 ## Apontamentos
--- Foi escolhido ef core para trabalhar com base de dados pois em um breve estudo foi identificado que o Identity trabalha de maneira mas eficiente 
--- Foi criado uma classe nomeada SeedUsuario para criar usuário assim que a api é "buildada" as entidades nomes,UserName,Email e senha estão em hardcode 
+- Foi escolhido ef core para trabalhar com base de dados pois em um breve estudo foi identificado que o Identity trabalha de maneira mas eficiente 
+- Foi criado uma classe nomeada SeedUsuario para criar usuário assim que a api é "buildada" as entidades nomes,UserName,Email e senha estão em hardcode 
 para Cadastra um novo usuário primeiro na ln 20  é verificado se o email já existe na base de dados 
 "_userManager.FindByEmailAsync("insiraAqui um email para verificar a existen de um usuário")
 
