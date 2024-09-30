@@ -186,6 +186,26 @@ namespace teste_jose_api.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("teste_jose_api.Model.RevokedToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("RevokedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RevokedTokens");
+                });
+
             modelBuilder.Entity("teste_jose_api.identity.AppUsuario", b =>
                 {
                     b.Property<string>("Id")

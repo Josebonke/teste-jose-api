@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using teste_jose_api.identity;
+using teste_jose_api.Model;
 
 
 namespace teste_jose_api
@@ -12,6 +13,8 @@ namespace teste_jose_api
          
 
         public DbSet<Model.LoginModel.UsuarioGrid> Usuarios { get; set; }
+
+        public DbSet<LogoutRequest> RevokedTokens { get; set; }
 
     }
 }

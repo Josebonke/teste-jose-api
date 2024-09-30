@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using teste_jose_api.Dao;
+using teste_jose_api.identity;
 using static teste_jose_api.Model.LoginModel;
 
 namespace teste_jose_api.Service
@@ -28,42 +29,16 @@ namespace teste_jose_api.Service
             var userFindByEmail = await _userRepository.GetUserByEmailAsync(filter.Email);
             var userFindedByPassword = await _userRepository.CheckPasswordAsync(userFindByEmail, filter.Senha);
 
-            if (userFindByEmail.LockoutEnabled)
-            {
-                await _userRepository.SetLockoutEndDateAsync(userFindByEmail, DateTimeOffset.UtcNow.AddMinutes(15));
-                throw new UnauthorizedAccessException("Usuario Bloquado");
-            }
-
-            if (userFindByEmail.LockoutEnd <= DateTime.Now)
-            {
-                userFindByEmail.Bloqueado = false;
-                userFindByEmail.LockoutEnabled = true;
-                userFindByEmail.TentativasDeLoginErradas = 0;
-                await _userRepository.UpdateUserAsync(userFindByEmail);
-            }
-            {
-                await _userRepository.SetLockoutEndDateAsync(userFindByEmail, DateTimeOffset.UtcNow.AddMinutes(15));
-                throw new UnauthorizedAccessException("Usuario Bloquado");
-            }
+            
+           
+            
+            
             if (userFindByEmail != null && userFindedByPassword)
             {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(new Claim[]
-                    {
-                        new Claim(ClaimTypes.NameIdentifier, userFindByEmail.Id),
-                        new Claim(ClaimTypes.Email, userFindByEmail.Email)
-                                }),
-                    Expires = DateTime.UtcNow.AddDays(7),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-                };
 
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-                return tokenHandler.WriteToken(token);
-
+               return this.GenerateJwtToken(userFindByEmail);
             }
+
             else if(userFindByEmail != null && !userFindedByPassword)
             {
                 userFindByEmail.TentativasDeLoginErradas += 1;
@@ -84,10 +59,26 @@ namespace teste_jose_api.Service
                 throw new UnauthorizedAccessException("Login ou senha inválidos.");
 
             }
-            
-           
+        }
 
-            
+        public string GenerateJwtToken(AppUsuario userFindByEmail)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Key"]);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                        new Claim(ClaimTypes.NameIdentifier, userFindByEmail.Id),
+                        new Claim(ClaimTypes.Email, userFindByEmail.Email),
+                        new Claim("Nome", userFindByEmail.Nome)
+                }),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }

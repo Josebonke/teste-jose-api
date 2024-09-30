@@ -24,19 +24,19 @@ builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<IUsuarioDAO, LoginDao>();
 builder.Services.Configure<IdentityOptions>(options =>
 {
-    
+
     options.Password.RequireDigit = true;
     options.Password.RequiredLength = 8;
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequireUppercase = true;
     options.Password.RequireLowercase = true;
 
-    
+
     options.Lockout.MaxFailedAccessAttempts = 5;
     options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
     options.Lockout.AllowedForNewUsers = true;
 
-    
+
     options.User.RequireUniqueEmail = true;
 });
 
@@ -63,7 +63,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Adiciona controle de CORS
+builder.Services.AddScoped<ILogoutTokenDao, LogoutDao>();
+builder.Services.AddScoped<ILogoutTokenService, LogoutService>();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
@@ -92,7 +94,7 @@ app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication(); // Adicione isto antes de Authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

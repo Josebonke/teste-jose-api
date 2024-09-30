@@ -17,18 +17,19 @@ namespace teste_jose_api
         public async Task InsertUserAsync()
         {
             
-            var existingUser = await _userManager.FindByEmailAsync("admin@teste.com");
+            var existingUser = await _userManager.FindByEmailAsync("jose@teste.com");
             if (existingUser == null)
             {
                 
                 var user = new AppUsuario
                 {
-                    UserName = "admin",
-                    Email = "admin@teste.com",
+                    UserName = "JoseTeste",
+                    Nome = "José Teste",
+                    Email = "jose@teste.com",
                     EmailConfirmed = true,
                 };
                
-                var result = await _userManager.CreateAsync(user, "Admin@123");
+                var result = await _userManager.CreateAsync(user, "Jose@123");
 
                 if (result.Succeeded)
                 {
