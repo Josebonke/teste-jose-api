@@ -12,7 +12,7 @@ Um arquivo .gitignore bem configurado é essencial para manter seu repositório 
 *.log
 *.obj
 **/*.pdb
-bin/
+
 obj/
 packages/
 
